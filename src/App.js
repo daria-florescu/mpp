@@ -8,7 +8,10 @@ import { syncQueuedOperations, queueOperation } from './utils/offlineQueue';
 import { Client } from '@stomp/stompjs';
 import FileUploader from './components/FileUploader';
 
-const API_BASE_URL = 'http://16.171.171.32:8080/api/books';
+// Use environment variables with fallbacks for local development
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api/books';
+const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'http://localhost:8080/api/tags';
+const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:8080/book-websocket';
 
 function App() {
     const [books, setBooks] = useState([]);
@@ -70,7 +73,7 @@ function App() {
 
     const fetchTags = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/tags');
+            const response = await fetch(API_TAGS_URL);
             const data = await response.json();
             setTags(data);
         } catch (err) {
@@ -90,7 +93,7 @@ function App() {
 
     useEffect(() => {
         const stompClient = new Client({
-            brokerURL: 'ws://localhost:8080/book-websocket',
+            brokerURL: WEBSOCKET_URL,
             connectHeaders: {},
             debug: (str) => console.log(str),
             reconnectDelay: 5000,
@@ -207,7 +210,6 @@ function App() {
         };
     }, []);
 
-
     return (
         <div className="app-container">
             <header className="app-header">
@@ -292,7 +294,6 @@ function App() {
                     </div>
                 </div>
             </section>
-
 
             <div className="main-content">
                 <section className="master-section">
