@@ -9,10 +9,9 @@ import { Client } from '@stomp/stompjs';
 import FileUploader from './components/FileUploader';
 
 // Use environment variables with fallbacks for local development
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://56.228.23.174:8080/api/books';
-const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'http://56.228.23.174:8080/api/tags';
-const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'ws://56.228.23.174:8080/book-websocket';
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://56.228.23.174:8080/api/books';
+const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'https://56.228.23.174:8080/api/tags';
+const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'wss://56.228.23.174:8080/book-websocket';
 function App() {
     const [books, setBooks] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
@@ -20,7 +19,7 @@ function App() {
     const [isAdding, setIsAdding] = useState(false);
     const [sortConfig, setSortConfig] = useState({ key: 'id', direction: 'ascending' });
     const [filterConfig, setFilterConfig] = useState({ searchTerm: '', genre: 'all', favorite: 'all' });
-    const [genres, setGenres] = useState(['all']);
+    const [genres, setGenres] = useState([]); // Changed: Start with empty array
     const [tags, setTags] = useState(['all']);
     const [tagFilter, setTagFilter] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -65,9 +64,12 @@ function App() {
             }
 
             const data = await response.json();
-            setGenres(data);
+            // Fixed: Properly prepend 'all' to the genres array
+            setGenres(['all', ...data]);
         } catch (err) {
             console.error('Error fetching genres:', err);
+            // Set fallback with just 'all' if fetch fails
+            setGenres(['all']);
         }
     };
 
