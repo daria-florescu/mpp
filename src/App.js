@@ -9,9 +9,9 @@ import { Client } from '@stomp/stompjs';
 import FileUploader from './components/FileUploader';
 
 // Use environment variables with fallbacks for local development
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api/books';
-const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'http://localhost:8080/api/tags';
-const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:8080/book-websocket';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://56.228.23.174:8080/api/books';
+const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'http://56.228.23.174:8080/api/tags';
+const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'ws://56.228.23.174:8080/book-websocket';
 
 function App() {
     const [books, setBooks] = useState([]);
