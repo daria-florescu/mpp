@@ -14,7 +14,7 @@ function FileUploader() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:8080/api/books/upload', {
+            const response = await fetch('http://56.228.23.174:8080/api/books/upload', {
                 method: 'POST',
                 body: formData,
             });
