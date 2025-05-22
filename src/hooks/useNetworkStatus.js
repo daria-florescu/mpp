@@ -5,7 +5,7 @@ export default function useNetworkStatus(syncCallback) {
 
     const checkServerOnline = async () => {
         try {
-            const response = await fetch('http://56.228.23.174:8080/api/books/ping');
+            const response = await fetch('api/books/ping');
             return response.ok;
         } catch {
             return false;

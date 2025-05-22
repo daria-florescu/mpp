@@ -1,5 +1,6 @@
 {
   "name": "untitled",
+  "proxy": "http://56.228.23.174:8080",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
