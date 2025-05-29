@@ -584,3 +584,243 @@ body {
 .file-uploader input {
     margin-bottom: 1rem;
 }
+/* ...existing styles... */
+
+/* Authentication Styles - Matching your color palette */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fefae0; /* Same as your body background */
+    padding: 20px;
+}
+
+.auth-form {
+    background: #dda15e; /* Same as your app-container */
+    padding: 2rem;
+    border-radius: 15px; /* Same as your app-container */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Same as your existing shadows */
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #606c38; /* Same border color as your elements */
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #283618; /* Same as your text color */
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Same as your existing form groups */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #283618; /* Same as your text color */
+}
+
+.auth-input {
+    width: 100%;
+    padding: 8px; /* Same as your existing inputs */
+    border: 2px solid #606c38; /* Same border style */
+    border-radius: 5px; /* Same as your existing inputs */
+    font-size: 16px;
+    color: #283618; /* Same text color */
+    background-color: #fefae0; /* Same as your input backgrounds */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #283618; /* Darker green on focus */
+    background-color: white;
+}
+
+.form-buttons {
+    margin-top: 20px; /* Same as your existing form buttons */
+}
+
+.auth-button {
+    width: 100%;
+    padding: 8px 20px; /* Same as your save-button */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s; /* Same transition */
+}
+
+.auth-button.primary {
+    background-color: #606c38; /* Same as your primary buttons */
+    color: white;
+}
+
+.auth-button.primary:hover:not(:disabled) {
+    background-color: #283618; /* Same hover color */
+}
+
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #bc6c25; /* Same as your cancel button */
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #606c38; /* Same border color */
+}
+
+.auth-switch p {
+    margin: 0;
+    color: #283618; /* Same text color */
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #606c38; /* Same as your primary color */
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 0.25rem;
+}
+
+.link-button:hover {
+    color: #283618; /* Darker on hover */
+}
+
+.error-message {
+    background: #f4cccc; /* Same as your server-down banner */
+    color: #7b241c; /* Same as server-down text */
+    padding: 12px;
+    border-radius: 10px; /* Same as your banners */
+    margin-bottom: 1rem;
+    border: 2px solid #e76f51; /* Same border */
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message {
+    background: #ffebb8; /* Same as your offline banner */
+    color: #7f4f24; /* Same as offline text */
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid #e9c46a;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* User Info Header */
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #fefae0; /* Same as your backgrounds */
+    border-bottom: 2px solid #606c38; /* Same border style */
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #606c38; /* Same as your primary color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.user-details h3 {
+    margin: 0;
+    color: #283618; /* Same text color */
+    font-size: 1rem;
+}
+
+.user-details p {
+    margin: 0;
+    color: #606c38; /* Slightly lighter text */
+    font-size: 0.875rem;
+}
+
+.logout-button {
+    background-color: #bc6c25; /* Same as your delete/cancel buttons */
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Same as your buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s; /* Same transition */
+}
+
+.logout-button:hover {
+    background-color: #dda15e; /* Same hover color */
+}
+
+/* Loading overlay for authentication */
+.auth-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(254, 250, 224, 0.9); /* Semi-transparent version of your background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.auth-loading-spinner {
+    border: 4px solid #dda15e;
+    border-top: 4px solid #606c38; /* Using your color palette */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments for auth forms */
+@media (max-width: 768px) {
+    .auth-form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .auth-container {
+        padding: 10px;
+    }
+    
+    .user-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
