@@ -15,7 +15,7 @@ import FileUploader from './components/FileUploader';
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://bookapp-backend.click/api/books';
 const API_AUTH_URL = process.env.REACT_APP_API_AUTH_URL || 'https://bookapp-backend.click/api/auth';
 const API_TAGS_URL = process.env.REACT_APP_API_TAGS_URL || 'https://bookapp-backend.click/api/tags';
-const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'wss://bookapp-backend.click/ws/book-websocket';
+const WEBSOCKET_URL = process.env.REACT_APP_WEBSOCKET_URL || 'wss://bookapp-backend.click/ws';
 
 // Authentication wrapper component
 function AuthenticatedApp() {
